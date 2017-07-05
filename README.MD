@@ -32,13 +32,15 @@ Inject it into your module
   imagepath="'MyImage.png'"
   width="1287" 
   height="968"
-  mask="{
-  	x: 226, 
-    y: 62,
-    width: 1466, 
-    height: 930}"
+  mask="
+  {
+  x: 226, 
+  y: 62,
+  width: 1466, 
+  height: 930
+  }"
   tooltips="[
-    {
+  {
   width: 60,
   height: 30,
   x:200,
