@@ -74,10 +74,10 @@ The Image you want to use as the background.
 If you want the mask to only appear on a specific area of the image. For example, if you have an image of a laptop and you only want the image to cover the screen of the laptop.
 ```json
 "{
-  	x: 226, 
-    y: 62,
-    width: 1466, 
-    height: 930
+x: 226, 
+y: 62,
+width: 1466, 
+height: 930
 }"
 ```
 ###### Tooltips
