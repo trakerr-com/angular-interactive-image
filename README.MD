@@ -16,6 +16,8 @@ If you don't already have it, you'll also need ngSanitize.
 ```
 Inject it into your module
 
+### Compatibillity
+Works in all modern browsers except IE 11 and below. Edge is fine.
 ```javascript
   angular
     .module('app', [
