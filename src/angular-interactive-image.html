@@ -1,0 +1,66 @@
+<div class="interactive-image-svg-container">
+    <svg class="interactive-image-tooltip-background" ng-model="svg"
+         version="1.1"
+         vbox = "{{myViewBox}}"
+         preserveAspectRatio="xMinYMin meet"
+         ng-style="{'background-image': myBackground, 'max-height': height, 'max-width': width}"
+         ng-mouseenter="toggleOverlay()" ng-mouseleave="toggleOverlay()" >
+    
+        <mask ng-attr-id="{{maskId}}">
+            <rect x="0" y="0" width="100%" height="100%" fill="white" ng-if="!mask"/>
+            <rect ng-attr-x="{{mask.x}}" ng-attr-y="{{mask.y}}" ng-attr-width="{{mask.width}}" ng-attr-height="{{mask.height}}" fill="white" ng-if="mask"/>
+            <rect ng-repeat="tooltip in tooltips" ng-attr-height="{{tooltip.height}}" ng-attr-width="{{tooltip.width}}" 
+            ng-attr-x="{{tooltip.x}}" ng-attr-y="{{tooltip.y}}"></rect>
+        </mask>
+
+        <rect ng-attr-height="{{height}}" ng-attr-width="{{width}}" ng-if="addOverlay" opacity="0.2" 
+        ng-attr-mask="{{maskUrl}}"></rect>
+        
+        <g ng-repeat="tooltip in tooltips" class="interactive-image-tooltip">
+            <image ng-if="tooltip.includeIcon"  
+                ng-attr-x="{{tooltip.x + (tooltip.width-30)}}" ng-attr-y="{{tooltip.y}}" 
+                height="30" width="30" xlink:href="https://d3hen887jsv7sh.cloudfront.net/img/tooltip_icon.png"
+                class="interactive-image-fade">
+            </image>
+
+            <rect ng-attr-height="{{tooltip.height}}" ng-attr-width="{{tooltip.width}}" opacity="0" style="fill: white" ng-attr-x="{{tooltip.x}}" ng-attr-y="{{tooltip.y}}"
+            uib-tooltip-template="'{{tooltip.filePath}}'" tooltip-append-to-body="true" tooltip-placement="top"
+            class="interactive-image-fade" ng-if="tooltip.filePath" tooltip-animation="false"></rect>
+
+            <rect ng-attr-height="{{tooltip.height}}" ng-attr-width="{{tooltip.width}}" opacity="0" style="fill: white" ng-attr-x="{{tooltip.x}}" ng-attr-y="{{tooltip.y}}"
+            uib-tooltip="'{{tooltip.text}}'" tooltip-append-to-body="true" tooltip-placement="top"
+            class="interactive-image-fade" ng-if="tooltip.text" tooltip-animation="false"></rect>
+
+            <rect ng-attr-height="{{tooltip.height}}" ng-attr-width="{{tooltip.width}}" opacity="0" style="fill: white" ng-attr-x="{{tooltip.x}}" ng-attr-y="{{tooltip.y}}"
+            uib-tooltip-html="'{{tooltip.html}}'" tooltip-append-to-body="true" tooltip-placement="top"
+            class="interactive-image-fade" ng-if="tooltip.html" tooltip-animation="false"></rect>
+        </g>
+    </svg>
+</div>
+
+<!--
+    Below is an example of using the directive
+    <div interactive-image 
+    imagepath="'https://d3hen887jsv7sh.cloudfront.net/img/landing/prioritize 2.png'"
+    width="1287" 
+    height="968" 
+    tooltips="[
+        {
+        width: 60,
+        height: 30,
+        x:200,
+        y:200,
+        filePath:'app/components/interactiveImage/tooltips/tooltip2.html',
+        includeIcon: true //if you want an icon right of the "hotspot"
+        },
+        {
+        x:200,
+        y:200,
+        filePath:'app/components/interactiveImage/tooltips/tooltip2.html'
+        }
+        
+        ]">
+    </div>
+    I suggest storing your tooltip data in a separate file or in a $scope variable, then referring to it like
+    tooltips="myTooltips"
+-->
