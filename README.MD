@@ -73,12 +73,12 @@ The Image you want to use as the background.
 ###### Mask
 If you want the mask to only appear on a specific area of the image. For example, if you have an image of a laptop and you only want the image to cover the screen of the laptop.
 ```json
-{
+"{
   	x: 226, 
     y: 62,
     width: 1466, 
     height: 930
-}
+}"
 ```
 ###### Tooltips
 The array of JSON objects that contains the info for all the tooltips. 
@@ -88,12 +88,12 @@ The array of JSON objects that contains the info for all the tooltips.
 ###### Width/Height and x/y
 It works on the coordinate system like any svgs, but you use the exact spot in the NATIVE resolution of the image. This indicates where the highlighted section will appear. The following example will highlight a 50/50 area in the top-left corner of the image.
 ```json
-{
+"{
 width: 50,
 height: 50,
 x: 0
 y: 0
-}
+}"
 ```
 ###### text 
 This just puts plain text in the tooltip, looks pretty ugly, I wouldn't use this in production.
