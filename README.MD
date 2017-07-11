@@ -4,9 +4,9 @@ It uses svgs to create highlighted areas based on where you specify, then adds r
 
 ### Online Demo
 
-In action at [Trakerr.io](https://trakerr.io)
+Demo of the tooltips in action is available at [Trakerr.IO](trakerr.io).
 
-![alt text](https://raw.githubusercontent.com/trakerr-com/angular-interactive-image/master/tooltips%20example.png "Tooltips at Trakerr.IO")
+[![Demo of tooltips at Trakerr.IO](https://raw.githubusercontent.com/trakerr-com/angular-interactive-image/master/tooltips%20example.png)](https://trakerr.io)
 
 ### Installation
 Include these two files in your project
