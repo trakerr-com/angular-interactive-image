@@ -2,7 +2,11 @@
 Angular-interactive-image is a directive for angular 1.x for creating rich, responsive, less painful and interactive images with tooltips. 
 It uses svgs to create highlighted areas based on where you specify, then adds rich tooltips from ui-bootstrap. 
 
+### Online Demo
+
 In action at [Trakerr.io](https://trakerr.io)
+
+![alt text](https://raw.githubusercontent.com/trakerr-com/angular-interactive-image/master/tooltips%20example.png "Tooltips at Trakerr.IO")
 
 ### Installation
 Include these two files in your project
